@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Icon } from './Icons.jsx'
 import { megaMenuGroups } from '../data/services.js'
+import logo from '../../public/logo-white-webtech.svg'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false) // mega menu (desktop)
@@ -28,22 +29,24 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-40 bg-panel/95 backdrop-blur border-b border-line">
-      <div className="container-content flex items-center justify-between h-16 md:h-[72px]">
+    <header className="sticky top-0 z-40 bg-slate-400 panel/95 backdrop-blur border-b border-line">
+      <div className="container-content flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <a href="#top" className="flex items-center gap-2 shrink-0">
-          <span className="grid place-items-center w-8 h-8 rounded-sm bg-ink text-brass">
+        <div className="flex items-center gap-2 shrink-0 ">
+          <a href="#top" className="flex items-center gap-2 shrink-0">
+            {/* <span className="grid place-items-center w-8 h-8 rounded-sm bg-ink text-brass">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 16V8l7 5 7-5v8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </span>
-          <span className="font-display font-extrabold text-lg tracking-tight">Meridian</span>
-        </a>
-
+          </span> */}
+            <img className=' h-16 w-32 md:h-40 md:w-56' src={logo} alt="Meridian Logo" />
+            {/* <span className="font-display font-extrabold text-lg tracking-tight">Meridian</span> */}
+          </a>
+        </div>
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1" ref={menuRef}>
           <button
-            className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-ink-soft hover:text-ink rounded-sm"
+            className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-ink-soft hover:text-ink rounded-sm cursor-pointer"
             aria-expanded={menuOpen}
             aria-haspopup="true"
             onClick={() => setMenuOpen((v) => !v)}
@@ -100,10 +103,38 @@ export default function Header() {
           </label>
           <a
             href="#estimate"
-            className="px-4 py-2.5 text-sm font-semibold rounded-sm bg-ink text-canvas hover:bg-teal-dark transition-colors"
+            className="flex items-center justify-center space-x-0 px-4 py-2 text-sm font-semibold rounded-sm bg-ink text-canvas hover:bg-teal-dark transition-colors"
           >
             Book a pro
+            <svg width="20" height="20" viewBox="0 0 300 300">
+              <defs>
+                <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="gold" />
+                  <stop offset="50%" stop-color="orange" />
+                  <stop offset="100%" stop-color="red" />
+                </linearGradient>
+              </defs>
+              <polygon
+                points="150,20 180,110 275,110 198,165
+                    225,260 150,205 75,260 102,165
+                    25,110 120,110"
+                fill="url(#starGradient)"
+                stroke="black"
+                stroke-width="4"
+              />
+              <polygon
+                points="150,20 180,110 275,110 198,165
+                    225,260 150,205 75,260 102,165
+                    25,110 120,110"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                opacity="0.5"
+                transform="translate(10,10)"
+              />
+            </svg>
           </a>
+
         </div>
 
         {/* Mobile toggle */}

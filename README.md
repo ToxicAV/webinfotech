@@ -1,6 +1,6 @@
-# Meridian — Home Services Platform Homepage
+# Web Info Tech — Home Services Platform Homepage
 
-A responsive marketing homepage for **Meridian**, a fictional platform that
+A responsive marketing homepage for **WebInfoTech**, a fictional platform that
 connects homeowners with vetted, licensed service professionals (electricians,
 plumbers, HVAC, cleaning, landscaping, handyman, roofing, painting).
 

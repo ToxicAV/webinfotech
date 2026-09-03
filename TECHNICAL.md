@@ -13,7 +13,7 @@ service picker from one edit.
 
 ## Styling approach
 
-Tailwind CSS 4.3 utility classes throughout, with a custom token layer
+Tailwind CSS/CSS 4.3 utility classes throughout, with a custom token layer
 defined directly in `src/index.css` via `@theme` (Tailwind v4's CSS-first
 configuration — no `tailwind.config.js` file):
 
